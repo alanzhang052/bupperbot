@@ -50,7 +50,7 @@ client.on('message', message => {
     } else if (command === 'pet') {
         client.commands.get('pet').execute(message, args);
     } else {
-       message.channel.send('Unrecognized command. Enter $help for proper usage');
+       message.channel.send('Unrecognized command. Enter !help for proper usage');
     }
 });
 
