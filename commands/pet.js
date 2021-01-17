@@ -27,12 +27,14 @@ module.exports= {
 
         var randOf = list => list[Math.floor(Math.random() * list.length)];
 
-        message.channel.send("<@"+ `${self}` + "> has been pet by <@" + `${taggedUser.id}`+">")
+
         if (taggedUser == self) {
+            message.channel.send("Kinda weirdChamp petting yourself but alright");
             const embed = new Discord.MessageEmbed()
                 .setImage(url=randOf(gifs));
             message.channel.send(embed);
         } else {
+            message.channel.send("<@"+ `${self}` + "> has been pet by <@" + `${taggedUser.id}`+">");
             const embed = new Discord.MessageEmbed()
                 .setImage(url=randOf(gifs));
             message.channel.send(embed);

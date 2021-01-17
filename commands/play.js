@@ -12,7 +12,7 @@ module.exports = {
         const permissions = voiceChannel.permissionsFor(message.client.user);
         if (!permissions.has('CONNECT')) return message.channel.send('You dont have the correct permissions');
         if (!permissions.has('SPEAK')) return message.channel.send('You dont have the correct permissions');
-        if (!args.length) return message.channel.send('You need to send the second argument!');
+        if (!args.length) return message.channel.send('Please provide a Youtube Link or name');
 
         const validURL = (str) =>{
             var regex = /(http|https):\/\/(\w+:{0,1}\w*)?(\S+)(:[0-9]+)?(\/|\/([\w#!:.?+=&%!\-\/]))?/;
@@ -33,7 +33,7 @@ module.exports = {
                 voiceChannel.leave();
             });
 
-            await message.reply(`Now Playing ***Your Link!***`);
+            await message.reply(`Now Playing Link!`);
 
             return;
         }
