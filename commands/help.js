@@ -4,7 +4,7 @@ const fs = require('fs');
 module.exports= {
     name: 'help',
     description: "Sends a proper usage log to the chat",
-    usage: "!help\n\n",
+    usage: "!help",
      execute(message, args){
         var list = [];
 

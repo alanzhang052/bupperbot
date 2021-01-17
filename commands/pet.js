@@ -4,7 +4,7 @@ const fs = require('fs');
 module.exports= {
     name: 'pet',
     description: "Pet a person you tag",
-    usage: "!pet\n\n",
+    usage: "!pet [Target Username]",
      execute(message, args){
         if (!message.mentions.users.size || message.mentions.users.size > 1) {
             return message.reply('Please tag the user you want to pet.');

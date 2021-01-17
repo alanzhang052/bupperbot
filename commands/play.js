@@ -4,7 +4,7 @@ const ytSearch = require('yt-search');
 module.exports = {
     name: 'play',
     description: 'Joins a channel to play a video from Youtube',
-    usage: "!play <videoName>\n\n",
+    usage: "!play [Video Name]",
     async execute (message, args) {
         const voiceChannel = message.member.voice.channel;
 
@@ -21,7 +21,7 @@ module.exports = {
             } else {
                 return true;
             }
-        }
+        };
 
         if (validURL(args[0])) {
 
@@ -31,12 +31,11 @@ module.exports = {
             connection.play(stream, {seek: 0, volume: 1})
             .on('finish', () =>{
                 voiceChannel.leave();
-                message.channel.send('leaving channel');
             });
 
-            await message.reply(`:thumbsup: Now Playing ***Your Link!***`)
+            await message.reply(`Now Playing ***Your Link!***`);
 
-            return
+            return;
         }
 
 
@@ -46,8 +45,7 @@ module.exports = {
             const videoResult = await ytSearch(query);
 
             return (videoResult.videos.length > 1) ? videoResult.videos[0] : null;
-
-        }
+        };
 
         const video = await videoFinder(args.join(' '));
 
@@ -56,9 +54,10 @@ module.exports = {
             connection.play(stream, {seek: 0, volume: 1})
             .on('finish', () =>{
                 voiceChannel.leave();
+                message.channel.send('Finished playing current queue!');
             });
 
-            await message.reply(`Woof! Now Playing ***${video.title}***`)
+            await message.reply(`Now Playing ***${video.title}***`);
         } else {
             message.channel.send('No video results found');
         }
