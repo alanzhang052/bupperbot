@@ -45,8 +45,8 @@ client.on('message', message => {
         client.commands.get('help').execute(message, args);
     } else if (command === 'play') {
         client.commands.get('play').execute(message, args);
-    } else if (command === 'credits') {
-        client.commands.get('credits').execute(message, args);
+    } else if (command === 'stop' || command === 'leave') {
+        client.commands.get('stop').execute(message, args);
     } else {
        message.channel.send('Unrecognized command. Enter $help for proper usage');
     }
