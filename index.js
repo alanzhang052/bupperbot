@@ -47,6 +47,8 @@ client.on('message', message => {
         client.commands.get('play').execute(message, args);
     } else if (command === 'stop' || command === 'leave') {
         client.commands.get('stop').execute(message, args);
+    } else if (command === 'pet') {
+        client.commands.get('pet').execute(message, args);
     } else {
        message.channel.send('Unrecognized command. Enter $help for proper usage');
     }
