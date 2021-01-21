@@ -1,7 +1,6 @@
 const Discord = require('discord.js');
-const fs = require('fs');
 
-module.exports= {
+module.exports = {
     name: 'pet',
     description: "Pet a person you tag",
     usage: "!pet [Target Username]",
