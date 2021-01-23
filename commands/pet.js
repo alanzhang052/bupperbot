@@ -26,9 +26,8 @@ module.exports = {
 
         var randOf = list => list[Math.floor(Math.random() * list.length)];
 
-
         if (taggedUser == self) message.channel.send('Kinda weirdChamp petting yourself but alright');
-        else message.channel.send('<@'+ `${self}` + '> has been pet by <@' + `${taggedUser.id}`+'>');
+        else message.channel.send('<@'+ `${taggedUser.id}` + '> has been pet by <@' + `${self}` + '>');
 
         const embed = new Discord.MessageEmbed()
             .setColor('#ffb366')

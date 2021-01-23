@@ -1,5 +1,7 @@
 const Discord = require('discord.js');
 
+const fs = require('fs');
+
 module.exports = {
     name: 'help',
     description: 'Sends a proper usage log to the chat',
