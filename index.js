@@ -40,19 +40,16 @@ client.on('message', message => {
     const args = message.content.slice(prefix.length).split(/ +/);
     const command = args.shift().toLowerCase();
 
-    // TODO: Improve search for command
-    if (command === 'help'){
-        client.commands.get('help').execute(message, args);
-    } else if (command === 'play') {
-        client.commands.get('play').execute(message, args);
-    } else if (command === 'stop' || command === 'leave') {
-        client.commands.get('stop').execute(message, args);
-    } else if (command === 'pet') {
-        client.commands.get('pet').execute(message, args);
-    } else if (command === 'dbfunction') {
-        client.commands.get('dbfunction').execute(message, args);
-    } else {
-       message.channel.send('Unrecognized command. Enter !help for proper usage');
+    if (!client.commands.has(command)) {
+        console.log("Command " + command + " does not exist!");
+        return;
+    }
+
+    try {
+        client.commands.get(command).execute(message, args);
+    } catch (error) {
+        console.error(error);
+        message.reply('There was an error trying to execute that command!');
     }
 });
 
