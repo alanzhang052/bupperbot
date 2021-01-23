@@ -1,10 +1,9 @@
 const Discord = require('discord.js');
-const fs = require('fs');
 
 module.exports= {
     name: 'stop',
-    description: "Leaves the discord channel it was in",
-    usage: "!stop or !leave",
+    description: 'Leaves the discord channel it was in',
+    usage: '!stop or !leave',
      execute(message, args){
          const voiceChannel = message.member.voice.channel;
 

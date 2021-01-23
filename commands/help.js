@@ -1,10 +1,9 @@
 const Discord = require('discord.js');
-const fs = require('fs');
 
 module.exports = {
     name: 'help',
-    description: "Sends a proper usage log to the chat",
-    usage: "!help",
+    description: 'Sends a proper usage log to the chat',
+    usage: '!help',
      execute(message, args){
         var list = [];
 

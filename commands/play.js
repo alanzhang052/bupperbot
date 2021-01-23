@@ -4,7 +4,7 @@ const ytSearch = require('yt-search');
 module.exports = {
     name: 'play',
     description: 'Joins a channel to play a video from Youtube',
-    usage: "!play [Video Name]",
+    usage: '!play [Video Name]',
     async execute (message, args) {
         const voiceChannel = message.member.voice.channel;
 

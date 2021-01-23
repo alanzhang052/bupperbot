@@ -16,8 +16,8 @@ for (const file of commandFiles) {
 
 client.on('ready', () => {
     console.log('Woof! BupperBot is online!');
-    client.user.setUsername("BupperBot");
-    client.user.setActivity("!help");
+    client.user.setUsername('BupperBot');
+    client.user.setActivity('!help');
 });
 
 function getUserFromMention(mention) {
@@ -41,7 +41,7 @@ client.on('message', message => {
     const command = args.shift().toLowerCase();
 
     if (!client.commands.has(command)) {
-        console.log("Command " + command + " does not exist!");
+        console.log('Command ' + command + ' does not exist!');
         return;
     }
 
