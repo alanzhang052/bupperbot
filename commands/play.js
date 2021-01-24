@@ -33,7 +33,7 @@ module.exports = {
                 voiceChannel.leave();
             });
 
-            await message.reply(`Now Playing Link!`);
+            await message.channel.send(`Now Playing Link!`);
 
             return;
         }
@@ -57,7 +57,7 @@ module.exports = {
                 message.channel.send('Finished playing current queue!');
             });
 
-            await message.reply(`Now Playing ***${video.title}***`);
+            await message.channel.send(`Now Playing ***${video.title}***`);
         } else {
             message.channel.send('No video results found');
         }

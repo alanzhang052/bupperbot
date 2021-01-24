@@ -6,7 +6,7 @@ module.exports = {
     usage: '!pet [Target Username]',
      execute(message, args){
         if (!message.mentions.users.size || message.mentions.users.size > 1) {
-            return message.reply('Please tag the user you want to pet.');
+            return message.reply('please tag the user you want to pet.');
         }
 
         const taggedUser = message.mentions.users.first();
